@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int        @id @default(autoincrement())
+  username   String     @unique
+  email      String     @unique
+  password   String
+  role       Role       @default(USER)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  cartItems  CartItem[]
+  orders     Order[]
+}
+
+model Pizza {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String
+  imageUrl    String?
+  category    String
+  isActive    Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  sizes       PizzaSize[]
+}
+
+model PizzaSize {
+  id         Int         @id @default(autoincrement())
+  pizzaId    Int
+  size       PizzaSizeType
+  diameterCm Int
+  price      Float
+  pizza      Pizza       @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  @@unique([pizzaId, size])
+}
+
+model CartItem {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  pizzaSizeId Int
+  quantity    Int       @default(1)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pizzaSize   PizzaSize @relation(fields: [pizzaSizeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, pizzaSizeId])
+}
+
+model Order {
+  id          Int         @id @default(autoincrement())
+  userId      Int
+  fullName    String
+  phone       String
+  address     String
+  comment     String?
+  status      OrderStatus @default(NEW)
+  totalPrice  Float
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id          Int       @id @default(autoincrement())
+  orderId      Int
+  pizzaSizeId  Int
+  quantity     Int
+  price        Float
+  pizzaName    String
+  size         PizzaSizeType
+  order        Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  pizzaSize    PizzaSize @relation(fields: [pizzaSizeId], references: [id])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum PizzaSizeType {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+enum OrderStatus {
+  NEW
+  CONFIRMED
+  COOKING
+  DELIVERING
+  COMPLETED
+  CANCELED
+}
