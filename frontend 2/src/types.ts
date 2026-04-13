@@ -1,6 +1,7 @@
 export type Role = 'USER' | 'ADMIN';
 export type PizzaSizeType = 'SMALL' | 'MEDIUM' | 'LARGE';
 export type OrderStatus = 'NEW' | 'CONFIRMED' | 'COOKING' | 'DELIVERING' | 'COMPLETED' | 'CANCELED';
+export type SupportConversationStatus = 'OPEN' | 'CLOSED';
 
 export interface User {
   id: number;
@@ -65,6 +66,36 @@ export interface Order {
   createdAt: string;
   items: OrderItem[];
   user?: Pick<User, 'id' | 'username' | 'email'>;
+}
+
+export interface SupportChatMessage {
+  id: number;
+  conversationId: number;
+  senderId: number;
+  authorRole: Role;
+  authorName: string;
+  text: string;
+  createdAt: string;
+}
+
+export interface SupportConversation {
+  id: number;
+  userId: number;
+  status: SupportConversationStatus;
+  createdAt: string;
+  updatedAt: string;
+  user: Pick<User, 'id' | 'username' | 'email'>;
+  messages: SupportChatMessage[];
+}
+
+export interface SupportConversationListItem {
+  id: number;
+  userId: number;
+  status: SupportConversationStatus;
+  createdAt: string;
+  updatedAt: string;
+  user: Pick<User, 'id' | 'username' | 'email'>;
+  lastMessage: SupportChatMessage | null;
 }
 
 export interface AuthResponse {

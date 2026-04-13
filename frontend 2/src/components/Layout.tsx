@@ -23,6 +23,7 @@ export function Layout() {
             <NavLink to="/">Меню</NavLink>
             <NavLink to="/cart">Корзина{totalCount ? ` (${totalCount})` : ''}</NavLink>
             {user && <NavLink to="/orders">Мои заказы</NavLink>}
+            {user && <NavLink to="/support">Поддержка</NavLink>}
             {user?.role === 'ADMIN' && <NavLink to="/admin">Админ</NavLink>}
           </nav>
 

@@ -103,3 +103,26 @@ img { display: block; max-width: 100%; }
   .nav { width: 100%; overflow-x: auto; }
   .section-head, .cart-row, .order-admin-row { flex-direction: column; align-items: flex-start; }
 }
+
+
+.support-layout { display: grid; gap: 20px; }
+.support-meta-row { display: flex; justify-content: flex-start; }
+.chat-box { min-height: 360px; max-height: 520px; overflow-y: auto; display: grid; gap: 12px; padding: 18px; border-radius: 22px; background: rgba(243, 239, 232, 0.9); }
+.chat-box--admin { min-height: 420px; }
+.chat-message { max-width: 78%; padding: 14px 16px; border-radius: 18px; display: grid; gap: 8px; }
+.chat-message p { margin: 0; white-space: pre-wrap; word-break: break-word; }
+.chat-message--user { justify-self: start; background: #fff; }
+.chat-message--admin { justify-self: end; background: #222; color: #fff; }
+.chat-message__meta { display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 12px; opacity: 0.8; }
+.support-admin-grid { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 18px; }
+.support-list { max-height: 640px; overflow-y: auto; }
+.support-list-item { width: 100%; border: 0; text-align: left; padding: 14px; border-radius: 18px; background: #f3eee6; display: grid; gap: 8px; }
+.support-list-item--active { background: #222; color: #fff; }
+.support-list-item p { margin: 0; color: inherit; opacity: 0.84; }
+.support-list-item__top { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.status-badge--closed { background: #f3d9d6; color: #8c2922; }
+
+@media (max-width: 980px) {
+  .support-admin-grid { grid-template-columns: 1fr; }
+  .chat-message { max-width: 100%; }
+}

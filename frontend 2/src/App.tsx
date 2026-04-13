@@ -8,6 +8,7 @@ import { AuthPage } from './pages/AuthPage';
 import { CartPage } from './pages/CartPage';
 import { HomePage } from './pages/HomePage';
 import { OrdersPage } from './pages/OrdersPage';
+import { SupportPage } from './pages/SupportPage';
 
 export default function App() {
   return (
@@ -24,6 +25,14 @@ export default function App() {
                 element={
                   <ProtectedRoute>
                     <OrdersPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="support"
+                element={
+                  <ProtectedRoute>
+                    <SupportPage />
                   </ProtectedRoute>
                 }
               />
