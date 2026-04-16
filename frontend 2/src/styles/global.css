@@ -126,3 +126,362 @@ img { display: block; max-width: 100%; }
   .support-admin-grid { grid-template-columns: 1fr; }
   .chat-message { max-width: 100%; }
 }
+
+.button:disabled,
+.button--ghost:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button--ghost {
+  border: 1px solid rgba(29, 29, 31, 0.08);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: rgba(34, 34, 34, 0.24);
+  box-shadow: 0 0 0 4px rgba(34, 34, 34, 0.06);
+}
+
+.admin-layout {
+  gap: 28px;
+}
+
+.admin-hero,
+.support-page-shell {
+  padding: 28px;
+}
+
+.admin-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.admin-hero h1,
+.support-hero h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.05;
+}
+
+.admin-hero p,
+.support-hero p {
+  margin: 0;
+  color: #6b645c;
+  max-width: 60ch;
+}
+
+.admin-kpi-grid,
+.support-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.support-summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-kpi-card,
+.support-summary-card {
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,243,236,0.95));
+  border: 1px solid rgba(29,29,31,0.06);
+  display: grid;
+  gap: 8px;
+}
+
+.admin-kpi-card span,
+.support-summary-card span {
+  font-size: 13px;
+  color: #7c766d;
+}
+
+.admin-kpi-card strong,
+.support-summary-card strong {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.admin-kpi-card small,
+.support-summary-card small {
+  color: #756f67;
+}
+
+.admin-top-grid {
+  align-items: start;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-size-card {
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(244, 239, 231, 0.72);
+}
+
+.admin-size-card p {
+  margin: 4px 0 0;
+  color: #7d766e;
+}
+
+.admin-entity-list,
+.admin-orders-grid {
+  gap: 14px;
+}
+
+.admin-entity-card,
+.admin-order-card,
+.support-thread-card {
+  border: 1px solid rgba(29,29,31,0.06);
+  background: rgba(255,255,255,0.72);
+  border-radius: 24px;
+}
+
+.admin-entity-card {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-entity-card p,
+.admin-order-card p,
+.support-thread-card p {
+  margin: 4px 0 0;
+  color: #726c64;
+}
+
+.admin-orders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-order-card {
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.admin-order-card__head,
+.support-thread-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.admin-order-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #6d675f;
+  font-size: 14px;
+}
+
+.admin-order-badge--new,
+.status-badge--live {
+  background: #ece5d8;
+  color: #574a36;
+}
+
+.admin-order-badge--confirmed {
+  background: #e5eefb;
+  color: #2d4e85;
+}
+
+.admin-order-badge--cooking {
+  background: #fff1db;
+  color: #8a5612;
+}
+
+.admin-order-badge--delivering {
+  background: #e4f0ff;
+  color: #2b5e9d;
+}
+
+.admin-order-badge--completed {
+  background: #e4f4e6;
+  color: #1d6a35;
+}
+
+.admin-order-badge--canceled,
+.status-badge--closed {
+  background: #f6ddda;
+  color: #922d28;
+}
+
+.support-page-shell {
+  gap: 24px;
+}
+
+.support-hero {
+  display: grid;
+  gap: 20px;
+}
+
+.support-chat-shell {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(248, 245, 239, 0.96), rgba(240, 233, 222, 0.96));
+  border: 1px solid rgba(29,29,31,0.06);
+}
+
+.support-chat-shell__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.support-chat-shell__header h2,
+.support-thread-card__header h3 {
+  margin: 0 0 4px;
+}
+
+.support-chat-shell__header p {
+  margin: 0;
+}
+
+.support-chat-box,
+.support-thread-box {
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(29,29,31,0.06);
+}
+
+.support-empty-state {
+  text-align: left;
+  display: grid;
+  gap: 8px;
+}
+
+.support-empty-state p,
+.support-compose__footer p,
+.support-list-item small {
+  margin: 0;
+  color: #726b63;
+}
+
+.support-compose {
+  display: grid;
+  gap: 12px;
+}
+
+.support-compose__textarea {
+  min-height: 120px;
+  background: rgba(255,255,255,0.92);
+}
+
+.support-compose__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.support-admin-panel {
+  padding-bottom: 24px;
+}
+
+.support-admin-grid--enhanced {
+  grid-template-columns: 340px minmax(0, 1fr);
+  align-items: start;
+}
+
+.support-list-item {
+  padding: 16px;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.support-list-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(29,29,31,0.06);
+}
+
+.support-list-item--active {
+  box-shadow: 0 16px 36px rgba(34,34,34,0.16);
+}
+
+.support-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.support-status-pill--open {
+  background: rgba(255,255,255,0.16);
+}
+
+.support-list-item:not(.support-list-item--active) .support-status-pill--open {
+  background: #e6f2e7;
+  color: #215f35;
+}
+
+.support-status-pill--closed {
+  background: #f3d9d6;
+  color: #8c2922;
+}
+
+.support-thread-card {
+  padding: 18px;
+}
+
+.user-pill--status {
+  min-width: 120px;
+}
+
+@media (max-width: 980px) {
+  .admin-hero,
+  .admin-orders-grid,
+  .admin-form-grid,
+  .admin-kpi-grid,
+  .support-summary-grid,
+  .support-admin-grid--enhanced {
+    grid-template-columns: 1fr;
+  }
+
+  .support-compose__footer,
+  .support-chat-shell__header,
+  .admin-order-card__head,
+  .support-thread-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-size-card {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-entity-card,
+  .support-compose__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-hero,
+  .support-page-shell {
+    padding: 20px;
+  }
+}
