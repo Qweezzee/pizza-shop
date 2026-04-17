@@ -42,7 +42,7 @@ export function SupportPage() {
   };
 
   const connectionLabel =
-    status === 'connected' ? 'В сети' : status === 'connecting' ? 'Подключаем чат…' : 'Нет соединения';
+    status === 'connected' ? 'В сети' : status === 'connecting' ? 'Подключаем чат' : 'Нет соединения';
 
   return (
     <section className="support-layout">
@@ -52,7 +52,7 @@ export function SupportPage() {
             <span className="eyebrow">Поддержка 24/7</span>
             <div>
               <h1>Чат с поддержкой</h1>
-              <p>Задай вопрос по заказу, оплате или доставке. Ответ придёт прямо сюда, без перезагрузки страницы.</p>
+              <p>Задай вопрос по заказу, оплате или доставке.</p>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export function SupportPage() {
           <div className="support-chat-shell__header">
             <div>
               <h2>Диалог</h2>
-              <p>{messages.length > 0 ? `Сообщений: ${messages.length}` : 'Пока сообщений нет, можно начать первым.'}</p>
+              <p>{messages.length > 0 ? `Сообщений: ${messages.length}` : 'Пока сообщений нет, можно начать первым :).'}</p>
             </div>
             <span className={`status-badge ${statusLabel === 'CLOSED' ? 'status-badge--closed' : 'status-badge--live'}`}>
               {statusLabel === 'OPEN' ? 'Оператор на линии' : 'Диалог завершён'}
@@ -87,7 +87,7 @@ export function SupportPage() {
             {messages.length === 0 ? (
               <div className="empty-state support-empty-state">
                 <strong>Чат пока пустой</strong>
-                <p>Опиши проблему одним сообщением, и администратор увидит её сразу.</p>
+                <p>Опиши проблему одним сообщением.</p>
               </div>
             ) : (
               messages.map((message) => (

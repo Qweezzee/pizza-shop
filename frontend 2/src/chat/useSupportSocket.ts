@@ -30,7 +30,7 @@ export function useSupportSocket(token: string | null) {
     (conversationId: number) => {
       if (!token) {
         setStatus('error');
-        setError('Нужна авторизация');
+        setError('Залогинься сначала');
         return;
       }
 
@@ -56,7 +56,7 @@ export function useSupportSocket(token: string | null) {
             setStatus('connected');
           } else {
             setStatus('error');
-            setError(ack.error || 'Не удалось войти в чат');
+            setError(ack.error || 'Иди гуляй');
           }
         });
       });

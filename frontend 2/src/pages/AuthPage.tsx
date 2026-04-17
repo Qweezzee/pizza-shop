@@ -66,7 +66,7 @@ export function AuthPage() {
           {error && <div className="error-box">{error}</div>}
 
           <button className="button" disabled={loading}>
-            {loading ? 'Подожди...' : mode === 'login' ? 'Войти' : 'Создать аккаунт'}
+            {loading ? 'Подожди' : mode === 'login' ? 'Войти' : 'Создать аккаунт'}
           </button>
         </form>
 

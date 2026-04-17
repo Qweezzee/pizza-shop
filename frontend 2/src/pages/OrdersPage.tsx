@@ -28,7 +28,7 @@ export function OrdersPage() {
       </div>
 
       {!orders.length ? (
-        <div className="empty-state">Заказов ещё нет.</div>
+        <div className="empty-state">Пусто.</div>
       ) : (
         orders.map((order) => (
           <article className="panel stack-sm" key={order.id}>

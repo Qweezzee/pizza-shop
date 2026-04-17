@@ -41,7 +41,7 @@ export function HomePage() {
       <section className="toolbar">
         <input
           className="input"
-          placeholder="Поиск по названию"
+          placeholder="Поиск"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
@@ -59,7 +59,7 @@ export function HomePage() {
       </section>
 
       {loading ? (
-        <div className="empty-state">Загружаем меню...</div>
+        <div className="empty-state">Загружаем меню</div>
       ) : (
         <section className="pizza-grid">
           {filtered.map((pizza) => (

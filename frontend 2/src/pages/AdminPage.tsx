@@ -137,7 +137,7 @@ export function AdminPage() {
         <div>
           <span className="eyebrow">Панель управления</span>
           <h1>Админка</h1>
-          <p>Управляй меню, заказами и поддержкой в одном аккуратном рабочем пространстве.</p>
+          <p>Ну модерка типа крутой ты.</p>
         </div>
 
         <div className="admin-kpi-grid">

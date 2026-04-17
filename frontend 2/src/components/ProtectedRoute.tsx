@@ -6,7 +6,7 @@ export function ProtectedRoute({ children, adminOnly = false }: { children: Reac
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <div className="empty-state">Загрузка...</div>;
+    return <div className="empty-state">Загрузка</div>;
   }
 
   if (!user) {

@@ -22,7 +22,7 @@ export function CartPage() {
     try {
       await ordersApi.create(token, form);
       setForm({ fullName: '', phone: '', address: '', comment: '' });
-      setMessage('Заказ оформлен');
+      setMessage('Едет');
       await refreshCart();
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Не удалось оформить заказ');
